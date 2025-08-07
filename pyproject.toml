@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "fitzlab-web"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poe.tasks]
+install = "poetry install"
+start = "docker compose up --build" # start stack with rebuild
+migrate-generate = "docker compose exec backend alembic --config alembic.ini revision --autogenerate -m 'init tables'"
+migrate-apply = "docker compose exec backend alembic --config alembic.ini upgrade head"
+seed = "docker compose exec backend python alembic/seed.py"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.116.1"
+sqlalchemy = "^2.0.42"
+uvicorn = {extras = ["standard"], version = "^0.35.0"}
+streamlit = "^1.48.0"
+alembic = "^1.16.4"
+dotenv = "^0.9.9"
+psycopg2-binary = "^2.9.10"
+
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.36.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
