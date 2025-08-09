@@ -10,9 +10,9 @@
 
 - Ensure that you have Docker Desktop installed and running on your machine. You can download it from [Docker's official website](https://www.docker.com/products/docker-desktop).
 - For development, ensure you have Python 3.8+ installed on your machine. You can download it from [Python's official website](https://www.python.org/downloads/). Include pip/pipx in the installation.
-- Ensure you have `poetry` installed. You can install it using `pipx`:
+- Ensure you have `poetry` installed. You can install it using `pip`:
 ```bash
-pipx install poetry
+pip install poetry
 ```
 
 #### Project Setup
