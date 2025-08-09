@@ -80,9 +80,6 @@ Streamlit frontend: http://localhost:8501
 
 Here are some suggested next steps for extending the project:
 
-- **Fix the Q-Vault banner**
-  It's so low quality! Replace `assets/qvault.png` with a higher resolution image.
-
 - **Add more SQLAlchemy models**  
   Create new model classes inside `backend/models/` and import them into `backend/db/base.py` so Alembic can detect them for migrations.
 
